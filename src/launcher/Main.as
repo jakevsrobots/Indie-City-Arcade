@@ -42,7 +42,7 @@ package launcher
 			_gameProcess = new GameProcess(testPath);
 			_gameProcess.launchGame();
 			
-			//lauches the game then closes it after milliseconds
+			//lauches the game then closes it after 5000 milliseconds
 			var timer:Timer = new Timer(5000);
 			timer.addEventListener(TimerEvent.TIMER, timerTick, false, 0, true);
 			timer.start();

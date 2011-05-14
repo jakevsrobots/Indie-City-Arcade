@@ -14,7 +14,7 @@
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="src" />
-    <class path="lib\AdamAtomic-flixel-dfd76d0" />
+    <class path="lib\ChevyRay-FlashPunk-46c75be" />
   </classpaths>
   <!-- Build options -->
   <build>
