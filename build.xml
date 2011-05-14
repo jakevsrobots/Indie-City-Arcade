@@ -5,7 +5,7 @@
 <project name="Indie City Arcade Launcher" basedir=".">
     <!-- <taskdef resource="flexTasks.tasks" classpath="${basedir}/flexTasks/lib/flexTasks.jar" /> -->
     <property name="FLEX_HOME" value="/opt/flexsdk_45" />
-    <property name="FLIXEL_PATH" value="AdamAtomic-flixel-dfd76d0" />
+    <property name="FLIXEL_PATH" value="lib/AdamAtomic-flixel-dfd76d0" />
 
     <taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" /> 
     
