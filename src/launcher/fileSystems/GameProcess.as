@@ -2,6 +2,8 @@ package launcher.fileSystems
 {
 	import flash.desktop.NativeProcess;
 	import flash.desktop.NativeProcessStartupInfo;
+	import flash.events.Event;
+	import flash.events.EventDispatcher;
 	import flash.events.NativeProcessExitEvent;
 	import flash.events.ProgressEvent;
 	import flash.filesystem.File;
@@ -9,7 +11,7 @@ package launcher.fileSystems
 	 * ...
 	 * @author Andy Saia
 	 */
-	public class GameProcess
+	public class GameProcess extends EventDispatcher
 	{
 		private var _gameFile:File;
 		private var _isRunning:Boolean;
@@ -37,6 +39,7 @@ package launcher.fileSystems
 			{
 				_gameFile.openWithDefaultApplication();
 				_isRunning = true;
+				dispatchEvent(new Event(Event.OPEN));
 			}
 			else
 				trace("ERROR: File at location " + _gameFile.nativePath + " does not exists");
@@ -76,6 +79,8 @@ package launcher.fileSystems
 			target.removeEventListener(ProgressEvent.STANDARD_ERROR_DATA, errorOutput);
 			target.closeInput();
 			_isRunning = false;
+			
+			dispatchEvent(new Event(Event.CLOSE));
 		}
 		
 		private function outputData(e:ProgressEvent):void 

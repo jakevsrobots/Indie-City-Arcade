@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<game>
+	<name>Sweeet Test Game</name>
+	<description>Sweeet Test Game</description>
+	<exePath>testGame.exe</exePath>
+	<imagePath>screenshot.png</imagePath>
+</game>
