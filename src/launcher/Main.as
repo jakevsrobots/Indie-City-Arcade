@@ -4,7 +4,7 @@ package launcher
 	import flash.display.StageDisplayState;
 	import flash.events.TimerEvent;
 	import flash.utils.Timer;
-	import launcher.processes.GameProcess;
+	import launcher.fileSystems.GameProcess;
 	import launcher.worlds.DemoWorld;
 	
 	import net.flashpunk.Engine;
