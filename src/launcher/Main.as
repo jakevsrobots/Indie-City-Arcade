@@ -10,9 +10,9 @@ package launcher
 	import launcher.fileSystems.GameFinder;
 	import launcher.fileSystems.GameProcess;
 	import launcher.worlds.DemoWorld;
-	
 	import net.flashpunk.Engine;
 	import net.flashpunk.FP;
+	
 
     [SWF(width="800", height="600", backgroundColor="#000000")];
 
@@ -50,7 +50,7 @@ package launcher
 			_gameProcess = new GameProcess(allGames[0].exePath);
 			_gameProcess.addEventListener(Event.OPEN, gameLaunched, false, 0, true);
 			_gameProcess.addEventListener(Event.CLOSE, gameClosed, false, 0, true);
-			_gameProcess.launchGame();
+			_gameProcess.launchWithNativeProcess();
 		}
 		
 		private function gameLaunched(e:Event):void 
@@ -62,7 +62,7 @@ package launcher
 			//closes the game after 5000 milliseconds
 			var timer:Timer = new Timer(5000);
 			timer.addEventListener(TimerEvent.TIMER, timerTick, false, 0, true);
-			timer.start();
+			//timer.start();
 		}
 		
 		private function gameClosed(e:Event):void 
