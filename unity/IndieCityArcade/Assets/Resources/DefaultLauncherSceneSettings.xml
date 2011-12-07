@@ -1,0 +1,14 @@
+<launcherSettings>
+    <gameObject name="sampleGameIcon"
+                x="3"
+                y="3"
+                z="0">
+        <component name="LaunchableGame" />
+    </gameObject>
+    
+    <!--
+    <gameObject name="dummy">
+        <component name="TestComponent" />
+    </gameObject>
+    -->
+</launcherSettings>

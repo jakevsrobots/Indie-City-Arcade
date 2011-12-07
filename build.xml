@@ -5,35 +5,42 @@
 <project name="Indie City Arcade Launcher" basedir=".">
     <!-- <taskdef resource="flexTasks.tasks" classpath="${basedir}/flexTasks/lib/flexTasks.jar" /> -->
     <property name="FLEX_HOME" value="/opt/flexsdk_45" />
-    <property name="FLIXEL_PATH" value="lib/AdamAtomic-flixel-dfd76d0" />
+    <property name="FLASHPUNK_PATH" value="lib/ChevyRay-FlashPunk-46c75be" />
 
     <taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" /> 
     
     <target name="main">
         <mxmlc
             file="src/launcher/Main.as"
-            output="build/Main.swf"
-            actionscript-file-encoding="UTF-8">
+            output="build/IndieCityArcade.swf"
+            actionscript-file-encoding="UTF-8"
+            configname="air">
 
             <!-- Get default compiler options. -->
-            <load-config filename="${FLEX_HOME}/frameworks/flex-config.xml" />
+            <load-config filename="${FLEX_HOME}/frameworks/air-config.xml" />
 
             <!-- List of path elements that form the roots of ActionScript
                  class hierarchies. -->
             <source-path path-element="${FLEX_HOME}/frameworks" />
-            <source-path path-element="${FLIXEL_PATH}" />
+            <source-path path-element="${FLASHPUNK_PATH}" />
             <source-path path-element="src" />
 
+            <library-path dir="${FLEX_HOME}/frameworks/libs" append="true">
+				<include name="*.swc" />
+			</library-path>            
+            <library-path dir="${FLEX_HOME}/frameworks/libs/air" append="true">
+				<include name="*.swc" />
+			</library-path>
+            
             <!-- Set size of output SWF file. -->
             <default-size width="400" height="300" />
-
             <static-link-runtime-shared-libraries />
         </mxmlc>
     </target>
 
     <target name="clean">
         <delete>
-            <fileset dir="build" includes="Main.swf"/>
+            <fileset dir="build" includes="IndieCityArcade.swf"/>
         </delete>
     </target>
 
